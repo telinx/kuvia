@@ -29,17 +29,17 @@ class SpHelper {
   }
 
   static LanguageModel getLanguageModel() {
-    Map map = SpUtil.getObject(Constant.KEY_LANGUAGE);
+    Map map = SpUtil.getObject(AppConstant.KEY_LANGUAGE);
     return map == null ? null : LanguageModel.fromJson(map);
   }
 
   static SplashModel getSplashModel() {
-    Map map = SpUtil.getObject(Constant.KEY_SPLASH_MODEL);
+    Map map = SpUtil.getObject(AppConstant.KEY_SPLASH_MODEL);
     return map == null ? null : SplashModel.fromJson(map);
   }
 
     static double getFontSizeScale() {
-    return SpUtil.getDouble(Constant.KEY_FONT_SIZE_SCALE, defValue: 1.0);
+    return SpUtil.getDouble(AppConstant.KEY_FONT_SIZE_SCALE, defValue: 1.0);
   }
 
 }

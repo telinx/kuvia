@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:kuvia/common/common.dart';
 import 'package:kuvia/ui/widgets/widgets.dart';
 import 'package:kuvia/utils/util_index.dart';
@@ -868,7 +869,7 @@ class _ExtendedImageState extends State<ExtendedImage>
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     CeleFaIcon(
-                      icon: FontAwesomeIcons.exclamationCircle,
+                      icon: FontAwesome5Solid.exclamation_circle,
                       size: 30.0,
                       color: Theme.of(context).textTheme.subtitle.color,
                     ),

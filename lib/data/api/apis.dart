@@ -1,17 +1,12 @@
 import 'package:kuvia/common/common.dart';
 
-class DumeiAndroidApi {
+class DumeiApi {
 
-  /// 首页banner http://www.wanandroid.com/banner/json
-  static const String BANNER = "banner";
+  static const String BANNER = "${AppConstant.SERVER_APP_ADDRESS}xml/slide/slide.xml";                        // 详情
+  static const String NEWSCONTENT = "${AppConstant.SERVER_APP_ADDRESS}xml/newscontent/${0}/${1}.xml";         // 文章详情
+  static const String RELATENEWS = "${AppConstant.SERVER_APP_ADDRESS}json/tags/${0}/${1}.json";               // 相关文章
+  static const String RANK = "${AppConstant.SERVER_APP_ADDRESS}json/newslist/rank";                     // 排行榜
 
-  static String getPath({String path: '', int page, String resType: 'json'}) {
-    StringBuffer sb = new StringBuffer(Constant.SERVER_ADDRESS + path);
-    if (page != null) {
-      sb.write('/$page');
-    }
-   
-    return sb.toString();
-  }
-  
+  static const String NEWSLIST = "${AppConstant.SERVER_WEB_ADDRESS}api/news/newslistpageget";                 // 列表文章
+
 }

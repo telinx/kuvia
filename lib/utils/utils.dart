@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:dio/dio.dart';
 import 'package:kuvia/resources/colors.dart';
 import 'package:common_utils/common_utils.dart';
 import 'package:flutter/material.dart';
@@ -243,6 +244,16 @@ class Utils {
   /// 两边去空
   static String filterNullString(dynamic val){
     return val ?? '';
+  }
+
+  /// decode response data.
+  static Map<String, dynamic> decodeData(Response response) {
+    if (response == null ||
+        response.data == null ||
+        response.data.toString().isEmpty) {
+      return Map<String, dynamic>();
+    }
+    return json.decode(response.data.toString());
   }
 
 }

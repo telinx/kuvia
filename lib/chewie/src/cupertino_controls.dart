@@ -6,7 +6,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:kuvia/common/common.dart';
 import 'package:kuvia/ui/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 import 'chewie_player.dart';
 import 'chewie_progress_colors.dart';
@@ -60,7 +60,7 @@ class _CupertinoControlsState extends State<CupertinoControls> {
           : Center(
               child: Icon(
                 // OpenIconicIcons.ban,
-                FontAwesomeIcons.ban,
+                FontAwesome5Solid.ban,
                 color: Colors.white,
                 size: 42,
               ),
@@ -424,8 +424,8 @@ class _CupertinoControlsState extends State<CupertinoControls> {
           controller.value.isPlaying
               // ? OpenIconicIcons.mediaPause
               // : OpenIconicIcons.mediaPlay,
-               ? FontAwesomeIcons.pause
-              : FontAwesomeIcons.play,
+               ? FontAwesome5Solid.pause
+              : FontAwesome5Solid.play,
           color: iconColor,
           size: 16.0,
         ),

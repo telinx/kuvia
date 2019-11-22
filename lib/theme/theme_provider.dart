@@ -23,7 +23,7 @@ class ThemeProvider extends ChangeNotifier {
 
   Future setTheme(Themes theme) async {
     this.theme = theme;
-    SpUtil.putString(Constant.KEY_THEME, themes[theme]);
+    SpUtil.putString(AppConstant.KEY_THEME, themes[theme]);
     if(Platform.isIOS){
       if(theme == Themes.DARK){
         FlutterStatusbarTextColor.setTextColor(FlutterStatusbarTextColor.light);
@@ -34,7 +34,7 @@ class ThemeProvider extends ChangeNotifier {
   }
 
   getTheme({bool isDarkMode= false}) {
-    String theme = SpUtil.getString(Constant.KEY_THEME);        // 如若SP存在KEY_THEME的值（即已经设置了主题模式），强制使用使用设置的主题，传入的isDarkMode不是影响因子
+    String theme = SpUtil.getString(AppConstant.KEY_THEME);        // 如若SP存在KEY_THEME的值（即已经设置了主题模式），强制使用使用设置的主题，传入的isDarkMode不是影响因子
     LogUtil.e('ThemeProvider====theme===${SpUtil.isInitialized()}==>>>$theme');
     switch(theme){
       case "Dark":

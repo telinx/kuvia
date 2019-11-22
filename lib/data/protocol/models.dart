@@ -1,10 +1,6 @@
 
 import 'dart:convert';
 
-import 'package:kuvia/blocs/bloc_index.dart';
-import 'package:kuvia/common/common.dart';
-import 'package:kuvia/utils/util_index.dart';
-
 class ComData {
   int total;
   List rows;
@@ -69,23 +65,215 @@ class ReposModel {
   }
 }
 
+class TabModel {
+  int id;
+  String name;
+  String webName;
+  int queneIndex;
+  String remark;
+
+  TabModel({
+    this.id, 
+    this.name, 
+    this.webName,
+    this.queneIndex,
+    this.remark,
+  });
+
+  TabModel.fromJson(Map<String, dynamic> jsonData)
+    : id = jsonData['id'],
+      name = jsonData['name'],
+      webName = jsonData['webName'],
+      queneIndex = jsonData['queneIndex'],
+      remark = jsonData['remark'];
+
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'name': name,
+    'webName': webName,
+    'queneIndex': queneIndex,
+    'remark': remark
+  };
+
+  @override
+  String toString() {
+    return jsonEncode(this);
+  }
+}
+
+class RankModel {
+  List<NewsModel> channel48Rank;
+  List<NewsModel> channelWeekHotRank;
+  List<NewsModel> channelWeekCommentRank;
+  List<NewsModel> channelMonthRank;
+
+  RankModel({
+    this.channel48Rank, 
+    this.channelWeekHotRank, 
+    this.channelWeekCommentRank,
+    this.channelMonthRank,
+  });
+
+  RankModel.fromJson(Map<String, dynamic> jsonData)
+    : channel48Rank = jsonData['channel48rank'],
+      channelWeekHotRank = jsonData['channelweekhotrank'],
+      channelWeekCommentRank = jsonData['channelweekcommentrank'],
+      channelMonthRank = jsonData['channelmonthrank'];
+
+  Map<String, dynamic> toJson() => {
+    'channel48Rank': channel48Rank,
+    'channelWeekHotRank': channelWeekHotRank,
+    'channelWeekCommentRank': channelWeekCommentRank,
+    'channelMonthRank': channelMonthRank
+  };
+
+  @override
+  String toString() {
+    return jsonEncode(this);
+  }
+}
+
+class NewsModel    {
+    int    newsid;
+    String    title;
+    String v;
+    String    orderdate;
+    String    postdate;
+    String    description;
+    String    image;
+    String slink;
+    int    hitcount;
+    int    commentcount;
+    int    cid;
+    String    url;
+    int    live;
+    String lapinid;
+    bool forbidcomment;
+    List<String> imagelist;
+    String c;
+    String client;
+    bool    isad;
+    int    sid;
+    String    postDateStr;  //PostDateStr
+    String    hitCountStr;     //HitCountStr
+    String    wapNewsUrl;   //WapNewsUrl
+    List<String> newsTips;        //NewsTips
+    
+    String newsSource;      //newssource
+    String newsAuthor;      //newsauthor
+    String detail;          //detail
+
+    NewsModel.fromJson(Map<String, dynamic> jsonData)
+      : newsid = jsonData['newsid'],
+        title = jsonData['title'],
+        v = jsonData['v'],
+        orderdate = jsonData['orderdate'],
+        postdate = jsonData['postdate'],
+        description = jsonData['description'],
+        image = jsonData['image'],
+        slink = jsonData['slink'],
+        hitcount = jsonData['hitcount'],
+        commentcount = jsonData['commentcount'],
+        cid = jsonData['cid'],
+        url = jsonData['url'],
+        live = jsonData['live'],
+        lapinid = jsonData['lapinid'],
+        forbidcomment = jsonData['forbidcomment'],
+        imagelist = jsonData['imagelist'],
+        c = jsonData['c'],
+        client = jsonData['client'],
+        isad = jsonData['isad'],
+        sid = jsonData['sid'],
+        postDateStr = jsonData['PostDateStr'],  //PostDateStr
+        hitCountStr = jsonData['HitCountStr'],     //HitCountStr
+        wapNewsUrl = jsonData['WapNewsUrl'],   //WapNewsUrl
+        newsTips = jsonData['NewsTips'],        //NewsTips
+
+        newsSource = jsonData['newssource'],      //newssource
+        newsAuthor = jsonData['newsauthor'],      //newsauthor
+        detail = jsonData['detail'] ;
+
+  Map<String, dynamic> toJson() => {
+      'newsid' : newsid,
+      'title' : title,
+      'v' : v,
+      'orderdate' : orderdate,
+      'postdate' : postdate,
+      'description' : description,
+      'image' : image,
+      'slink' : slink,
+      'hitcount' : hitcount,
+      'commentcount' : commentcount,
+      'cid' : cid,
+      'url' : url,
+      'live' : live,
+      'lapinid' : lapinid,
+      'forbidcomment' : forbidcomment,
+      'imagelist' : imagelist,
+      'c' : c,
+      'client' : client,
+      'isad' : isad,
+      'sid' : sid,
+      'postDateStr' : postDateStr,  //PostDateStr
+      'hitCountStr' : hitCountStr,     //HitCountStr
+      'wapNewsUrl' : wapNewsUrl,   //WapNewsUrl
+      'newsTips' : newsTips,        //NewsTips
+
+      'newsSource' : newsSource,      //newssource
+      'newsAuthor' : newsAuthor,      //newsauthor
+      'detail' : detail,   
+      };
+
+  @override
+  String toString() {
+    return jsonEncode(this);
+  }
+}
+
+//<title>
+// <![CDATA[ 华为可折叠“翻盖”手机专利渲染图曝光 ]]>
+// </title>
+// <link>
+// <![CDATA[ https://www.ithome.com/0/457/563.htm ]]>
+// </link>
+// <newstype/>
+// <stime>2019/11/21 15:21:43</stime>
+// <etime>2019/11/22 15:11:00</etime>
+// <opentype>1</opentype>
+// <device>3,5,6,7,8,9</device>
+// <image>
+// http://img.ithome.com/newsuploadfiles/focus/dd64b905-e754-4b84-b5f5-954ba7f0be10.jpg
+// </image>
+
 class BannerModel {
   String title;
-  String id;
-  String url;
-  String imagePath;
+  String link;
+  String newsType;
+  String sTime;
+  String eTime;
+  int openType;
+  String device;
+  String image;
 
   BannerModel.fromJson(Map<String, dynamic> jsonData)
       : title = jsonData['title'],
-        id = jsonData['id'],
-        url = jsonData['url'],
-        imagePath = jsonData['imagePath'];
+        link = jsonData['link'],
+        newsType = jsonData['newstype'],
+        sTime = jsonData['stime'],
+        eTime = jsonData['etime'],
+        openType = jsonData['opentype'],
+        device = jsonData['device'],
+        image = jsonData['image'];
 
   Map<String, dynamic> toJson() => {
         'title': title,
-        'id': id,
-        'url': url,
-        'imagePath': imagePath,
+        'link': link,
+        'newsType': newsType,
+        'sTime': sTime,
+        'eTime': eTime,
+        'openType': openType,
+        'device': device,
+        'image': image,
       };
 
   @override

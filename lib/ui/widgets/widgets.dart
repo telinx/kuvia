@@ -134,7 +134,7 @@ class CeleStylesWidgets{
         // child: Icon(Icons.play_arrow, size: videoIconSize, color: Colors.white),
         child: Center(
           child: CeleFaIcon(
-            icon: FontAwesomeIcons.play,
+            icon: FontAwesome.play,
             size: videoIconSize,
             color: Colors.white,
             left: 4,
@@ -155,7 +155,7 @@ class CeleStylesWidgets{
         // child: Icon(Icons.pause, size: videoIconSize, color: Colors.white),
         child: Center(
           child: CeleFaIcon(
-            icon: FontAwesomeIcons.pause,
+            icon: FontAwesome5Solid.pause,
             size: videoIconSize,
             color: Colors.white
           ),
@@ -175,7 +175,7 @@ class CeleStylesWidgets{
         // child: Icon(Icons.replay, size: videoIconSize, color: Colors.white),
         child: Center(
           child: CeleFaIcon(
-            icon: FontAwesomeIcons.redoAlt,
+            icon: FontAwesome5Solid.redo,
             size: videoIconSize,
             color: Colors.white
           ),
@@ -395,7 +395,7 @@ class NothingNotice extends StatelessWidget {
       physics: BouncingScrollPhysics(),
       child: Container(
         // color: Colors.black12,
-        height: AppConfig.appScreenHeight - appbarheight - AppConfig.statusBarHeight + 0.2,
+        height: AppConfig.appScreenHeight - appbarheight - AppConfig.appStatusBarHeight + 0.2,
         padding: EdgeInsets.only(top: 100.0),
         child: Column(
           children: <Widget>[
@@ -530,7 +530,7 @@ class AppHeader extends StatelessWidget{
         Container(
           width: AppConfig.appScreenWidth,
           height: height == null ? AppConfig.appHeaderHeight : height,
-          padding: EdgeInsets.only(top: AppConfig.statusBarHeight),
+          padding: EdgeInsets.only(top: AppConfig.appStatusBarHeight),
           decoration: BoxDecoration(
             color: Theme.of(context).cardColor.withOpacity(0.9),
             border: Border(bottom: BorderSide(width: 0.33, color: Color.fromRGBO(160, 160, 160, 0.8))),

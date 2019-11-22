@@ -58,8 +58,8 @@ class MyApp extends StatelessWidget {
  
   @override
   Widget build(BuildContext context) {
-    LogUtil.debuggable = Constant.DEBUG_MODE;
-    DioUtil.setDebug(Constant.DEBUG_MODE);
+    LogUtil.debuggable = AppConstant.DEBUG_MODE;
+    DioUtil.setDebug(AppConstant.DEBUG_MODE);
     final MainBloc mainBloc = BlocProvider.of<MainBloc>(context);
     _initAsync(mainBloc);
     LogUtil.v('Main---->AppLocalLabel.homeTabs------getData--build');

@@ -73,10 +73,10 @@ class _SplashPageState extends State<SplashPage> {
   Future _initAsync() async {
     await SpUtil.getInstance();
 
-    bool openedAppStatus = SpUtil.getBool(Constant.KEY_GUIDE);
+    bool openedAppStatus = SpUtil.getBool(AppConstant.KEY_GUIDE);
     LogUtil.v('_initAsync---------=======>>>>openedAppStatus: $openedAppStatus');
     if (openedAppStatus != true && _guideList.length > 0) { // 判断是否是第一次启动，第一次启动加载 使用介绍 图，非第一次则启动画面
-      SpUtil.putBool(Constant.KEY_GUIDE, true);
+      SpUtil.putBool(AppConstant.KEY_GUIDE, true);
       _status = 2;  // 1为首次启动介绍页面
     }else {
       _splashModel = SpHelper.getSplashModel();
@@ -138,7 +138,7 @@ class _SplashPageState extends State<SplashPage> {
 
    /// 设置屏幕信息
   void setScreenData(BuildContext context){
-    AppConfig.statusBarHeight = ScreenUtil.getStatusBarH(context);
+    AppConfig.appStatusBarHeight = ScreenUtil.getStatusBarH(context);
     AppConfig.appScreenWidth = ScreenUtil.getScreenW(context);
     AppConfig.appScreenHeight = ScreenUtil.getScreenH(context);
     AppConfig.kBackGestureWidth = AppConfig.appScreenWidth - 30.0;
@@ -192,7 +192,7 @@ class _SplashPageState extends State<SplashPage> {
     }
     Future.delayed(defaultSplashTime).then((_) {
       final MainBloc mainBloc = BlocProvider.of<MainBloc>(context);
-      String theme = SpUtil.getString(Constant.KEY_THEME);
+      String theme = SpUtil.getString(AppConstant.KEY_THEME);
       LogUtil.e('splash theme===========${SpUtil.isInitialized()}==111>>>>$theme==${Themes.DARK.toString()}==${Themes.DARK.toString().indexOf(theme)}');
       if(ObjectUtil.isNotEmpty(theme)){
         ThemeProvider themeProvider = mainBloc.themeBloc.com ?? ThemeProvider();
