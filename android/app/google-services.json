@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "275802139057",
+    "firebase_url": "https://kuvia-entertainment.firebaseio.com",
+    "project_id": "kuvia-entertainment",
+    "storage_bucket": "kuvia-entertainment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275802139057:android:4d7f2be2c109854b55b590",
+        "android_client_info": {
+          "package_name": "com.kuvia.entertainment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "275802139057-5df22odtjcg77m08go6mkm47t25ki1je.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kuvia.entertainment",
+            "certificate_hash": "c0a15021a4bc157119dd81a1658e270d50b2c90d"
+          }
+        },
+        {
+          "client_id": "275802139057-ab6mriov04fj0unufosrjbof98tfs5c8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJIiY6zOuQl4AXqasT9HEVEpHDE5xZVMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "275802139057-ab6mriov04fj0unufosrjbof98tfs5c8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "275802139057-80v967hk5ra7vffvn51fo0nk28i8r1qm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kuvia.entertainment"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
